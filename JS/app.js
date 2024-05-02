@@ -63,7 +63,18 @@ const producto = {
 producto.cantidad = 20
 console.log(producto)
 
-delete producto.disponible;
+// delete producto.disponible;
 console.log(producto)
 
-console.log(producto.nombreProducto)
+console.log(`El nombre del producto es: ${producto.nombreProducto}`);
+console.log(`El precio del producto es ${producto.precioProducto}`);
+console.log(`Producto disponible: ${producto.disponible}`);
+
+// destructuring
+console.log('Haciendo destructuring a un objeto');
+
+const {nombreProducto, precioProducto, disponible} = producto;
+
+console.log(`El nombre del producto es: ${nombreProducto}`);
+console.log(`El precio del producto es ${precioProducto}`);
+console.log(`Producto disponible: ${disponible}`);
