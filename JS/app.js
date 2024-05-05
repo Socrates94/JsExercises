@@ -163,3 +163,95 @@ carrito.forEach( articulo =>  {
 console.log(`Su total a pagar es: ${total}`);
 
 // funciones
+
+function mesnaje(){
+    console.log('homla desde la funcion');
+}
+
+
+mesnaje()
+
+let numero1 = 20;
+let numero2 = 20
+const suma = function(numero1, numero2){
+    console.log(numero1 + numero2);
+}
+
+suma(numero1, numero2);
+
+//funcion iife se llama a si misma, no es necesaria invocarla 
+(function(){
+    console.log('esta funcion se llama a si misma');
+})();
+
+// C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin
+
+const number1 = 20;
+const number2 = "20";
+
+console.log(typeof(number1.toString()))
+console.log(typeof(parseInt(number2)))
+
+function sum(numero1 = 0, numero2 = 0){
+    return numero1 + numero2;
+}
+
+console.log(`Suma con una funcion: ${sum(number1, parseInt(number2) )}`)
+console.log(`Suma con una funcion: ${sum(45555)}`)
+
+let sum1 = function(numero1 = 0, numero2 = 0){
+    return numero1 + numero2
+}
+
+console.log(`suma con variable como funcion: ${sum1(number1, parseInt(number2))}`)
+console.log(`suma con variable como funcion: ${sum1(666)}`)
+
+
+let total2 = 0;
+
+function compraTotal(numero){
+    return total2 += numero;
+}
+
+compraTotal(666)
+compraTotal(777)
+compraTotal(888)
+compraTotal(999)
+compraTotal(555)
+compraTotal(444)
+compraTotal(333)
+
+console.log(`El total de su compra es: ${total2}`);
+
+function conFactura(total){
+    return 1.16 * total;
+}
+
+console.log(`El total de su compar con factura es: ${conFactura(total2)}`);
+
+//objeto con atributos como elemetnos
+const reproductor = {
+    reproducir: function(nombreCancion){
+        console.log(`Reproduciendo ${nombreCancion}`)
+    },
+    pausar: function(nombreCancion){
+        console.log(`Pausando ${nombreCancion}`)
+    },
+    artistaNombre: function(nombreArtista){
+        console.log(`Nombre del artista: ${nombreArtista}`)
+    }
+}
+
+reproductor.reproducir('Alive')
+reproductor.pausar('Alive')
+reproductor.artistaNombre('Daft punk');
+
+//arrow fuctions
+
+let sumaArrow = (n1, n2) => console.log(n1 + n2);
+
+sumaArrow(568,598);
+
+let mesnaje1 = tecnologia => console.log(`Aprendiendo ${tecnologia}`);
+
+mesnaje1('JS')
