@@ -255,3 +255,149 @@ sumaArrow(568,598);
 let mesnaje1 = tecnologia => console.log(`Aprendiendo ${tecnologia}`);
 
 mesnaje1('JS')
+
+//This 
+
+const reservacio = {
+    nombre: 'daniel',
+    apellido: 'flores',
+    total: 5000,
+    pagado: true,
+    informacion: function(){
+        console.log(`El cliente ${this.nombre} reservo y su cantidad a paagr es: ${this.total} pagado: ${this.pagado}`)
+    }
+}
+
+reservacio.informacion();
+
+//Object constructor
+
+function Producto(nombre, precio){
+    this.nombre = nombre;
+    this.precio = precio;
+}
+
+Producto.prototype.formatearProducto = function(){
+    return `El producto ${this.nombre} tiene un precio de: ${this.precio}`
+}
+
+
+const producto10 = new Producto('pantalla', 9000);
+
+console.log(producto10.formatearProducto());
+
+function Cliente(nombre, apellido){
+    this.nombre = nombre;
+    this.apellido = apellido;
+}
+
+Cliente.prototype.formatearCliente = function(){
+    return `Cliente: ${this.nombre} ${this.apellido}`
+}
+
+const cliente10 = new Cliente('daniel', 'flores');
+
+console.log(cliente10.formatearCliente());
+
+
+class Product{
+
+    constructor(nombre, precio){
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    getPrecio(){
+        return this.precio;
+    }
+
+    toString(){
+        return `Producto: ${this.nombre} Precio: ${this.precio}`;
+    }
+
+}
+
+class Libro extends Product{
+
+    constructor(nombre, precio, serial){
+        super(nombre, precio);
+        this.serial = serial;
+    }
+
+    toString(){
+        return `${super.toString()} y su serial es ${this.serial}`;
+    }
+
+    getSeriarl(){
+        return `Serial del libro ${this.serial}`;
+    }
+
+}
+
+const product1 = new Product('mouse', 250);
+console.log(product1.toString());
+console.log(`El precio: ${product1.getPrecio()}`);
+
+
+
+const libro1 = new Libro('los protocolos de los sabios de sion', 250, '123456789');
+console.log(libro1.toString());
+console.log(libro1.getSeriarl());
+
+/* prmises */
+
+const usuarioAutenticado = new Promise( (resolve, reject) =>  {
+    const auth = true
+
+    if(auth){
+        resolve('Usuario autenticado');
+    }else{
+        reject('no se pudo iniciar sesion');
+    }
+
+})
+
+usuarioAutenticado
+    .then( resultado => console.log(resultado) )
+    .catch( error => console.log(error) )
+
+
+const boton = document.querySelector('#boton');
+
+boton.addEventListener('click', function(){
+    Notification.requestPermission()
+        .then( resultado => console.log(`El resultado es ${resultado}`) );
+})
+
+if( Notification.permission  == 'granted'){
+    new Notification('Esta es una notificacion de cheemsito', {
+        icon: 'img/cheems3.png',
+        body: 'Homla te he hackeado'
+    })
+}
+
+//async await
+function descargarArchivos(){
+    return new Promise( resolve => {
+
+        console.log('Descargando archivos...');
+
+        setTimeout(() => {
+                resolve('los archivos han sido descargados');
+        }, 5000);
+    })
+}
+
+
+async function app(){
+    try {
+        const resultado = await descargarArchivos();
+
+        console.log(resultado);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+app();
+
