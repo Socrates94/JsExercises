@@ -1,0 +1,27 @@
+{
+    "empleados": [
+        {
+            "id": 1,
+            "nombre": "daniel",
+            "puesto": "IT support"
+        },
+        {
+            "id": 2,
+            "nombre": "Pepe",
+            "puesto": "Developer"
+        },        {
+            "id": 3,
+            "nombre": "Jose",
+            "puesto": "Tecnico informatico"
+        },        {
+            "id": 4,
+            "nombre": "Cheemsito",
+            "puesto": "Backend dev"
+        },
+        {
+            "id": 5,
+            "nombre": "Rufencio",
+            "puesto": "Block chain dev y financiero"
+        }
+    ]
+}
